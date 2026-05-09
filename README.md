@@ -76,6 +76,12 @@ pip3 install torch-2.4.0+rocm6.3.4.git7cecbf6d-cp312-cp312-linux_x86_64.whl torc
 python3 -c 'import torch' 2> /dev/null && echo 'Success' || echo 'Failure'
 ```
 
+UPDATE NOTE:
+
+```bash
+pip install --pre torch torchvision torchaudio --index-url https://download.pytorch.org/whl/nightly/rocm6.4 --force-reinstall
+```
+
 More information here:
 
 [AMD ROCm Pytorch](https://rocm.docs.amd.com/projects/install-on-linux/en/latest/install/3rd-party/pytorch-install.html)
@@ -99,5 +105,13 @@ Depending of the ROCm version, select the tensorflow package. More information h
 source tf-rocm-env/bin/activate
 
 pip3 install tensorflow-rocm==2.16.2 -f https://repo.radeon.com/rocm/manylinux/rocm-rel-6.3.3/ --upgrade
+python3 -c 'import tensorflow' 2> /dev/null && echo ‘Success’ || echo ‘Failure’
+```
+
+UPDATE NOTE:
+
+```bash
+pip uninstall -y tensorflow tensorflow-rocm tensorflow-estimator
+pip3 install tensorflow-rocm==2.18.1 -f https://repo.radeon.com/rocm/manylinux/rocm-rel-6.4.1/ --upgrade
 python3 -c 'import tensorflow' 2> /dev/null && echo ‘Success’ || echo ‘Failure’
 ```
